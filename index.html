@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>EL CONTA.NFT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    background-color: #1C339A;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #E7EBFF;
+  }
+  .logo-small {
+    color: #1C339A;
+    font-size: 50px;
+  }
+  .logo {
+    color: #1C339A;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #1C339A;
+  }
+  .carousel-indicators li {
+    border-color: #1C339A;
+  }
+  .carousel-indicators li.active {
+    background-color: #1C339A;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #1C339A; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #1C339A;
+    background-color: #fff !important;
+    color: #1C339A;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #1C339A !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #1C339A;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #1C339A;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #1C339A !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #1C339A;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Inicio</a></li>
+		<li><a href="#services">Servicios</a></li>
+        <li><a href="#portfolio">Portafolio</a></li>
+        <li><a href="#contact">Contacto</a></li>
+		<li><a href="#about">Acerda De</a></li>
+		<li><a href="https://elcontanft.wordpress.com/">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>EL CONTA.NFT</h1> 
+  <p>Soluciones contables y sistemas innovadores para tu crecimiento empresarial</p> 
+  
+</div>
+<div>
+  <center><img src="img/banner1.jpg" height="300" width="450"></center>
+</div>
+
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>SERVICIOS</h2>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-briefcase logo-small"></span>
+      <h4>CONSULTORIA</h4>
+      <p>Transforma tus datos en decisiones sólidas con nuestra experiencia</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-qrcode logo-small"></span>
+      <h4>SOLUCIONES INFORMATICAS</h4>
+      <p>El éxito de tu negocio comienza con la contabilidad inteligente</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-pencil logo-small"></span>
+      <h4>AUDITORIA DE PROCESOS</h4>
+      <p>Profesionales en contabilidad y sistemas, tu aliado estratégico</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      
+      <h4></h4>
+      <p></p>
+    </div>
+    <div class="col-sm-4">
+      
+      <h4></h4>
+      <p></p>
+    </div>
+    <div class="col-sm-4">
+      
+      <h4 style="color:#303030;"></h4>
+      <p></p>
+	    <br>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <h2>Portafolio</h2><br>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/portal.png" alt="Portal Proveedores" width="200" height="150">
+       <h4> <p><strong>Portal Proveedores</strong></p>
+		<li>Portal Web para los XML de Proveedores</li>
+    <li>Validación  de vigencia ante el SAT de cada XML y revision del RFC en Lista Negra </li>
+    <li>Repositorio en la Nube</li>
+		</p></h4>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://images.pexels.com/photos/8441775/pexels-photo-8441775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Consultoria" width="200" height="150">
+        <h4>
+        <p><strong>Consultoria</strong></p>
+        <p>
+		<li>Implementación de Epicor, WebErp, Odoo</li>
+        <li>Análisis y Documentación de Procesos</li>
+		<li>Administración de Proyectos</li>
+		</p></h4>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://images.pexels.com/photos/3862632/pexels-photo-3862632.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Automatizaciones" width="200" height="150">
+        <h4>
+        <p><strong>Automatizaciones</strong></p>
+      <p>
+		<li>Automatización de Procesos Productivos</li>
+    <li>Soluciones para Activacion de Equipos por Pulsos</li>
+    <li>Desarrollo de Interfaces digitales y analogas</li>
+		
+		</p> 
+      </h4>
+      </div>
+    </div>
+  </div>   
+</div>
+
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid ">
+  
+<h2 class="text-center">CONTACTO</h2>
+  <div class="row">
+    <div class="col-sm-5">
+<br>
+  <br>
+  <br>
+  <br>
+  <br>
+      <p>Contactanos para conocer mas sobre nuestras soluciones</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> México</p>
+      <p><span><img src="https://cdn-icons-png.flaticon.com/512/179/179342.png?w=740&t=st=1685427669~exp=1685428269~hmac=2e5ff9a2ca4f5a11d5021ddf785d6e5b6ef5a7077ee8f259d1ea60aac7ad07b9" width="25" height = "25" ></span> <a href="https://twitter.com/elcontanft">@elcontanft</a></p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <br>
+  <br>
+  <br>
+  <br>
+  <br>
+	  <div class="row">
+        <div class="col-sm-6 form-group">
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+	<br>
+		<br>
+<!-- Container (IMAGEN) -->
+<div id="about" class="container-fluid bg-grey"> 
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>MISION:</h2>
+      <h4><b>Ser Tu socio confiable en contabilidad y sistemas para un crecimiento sólido</b></h4><br>
+      
+	  <p>Los sistemas son clave para el éxito financiero en la era digital. Automatizan tareas, agilizan procesos y brindan información precisa en tiempo real. Desde contabilidad hasta análisis, los sistemas impulsan la eficiencia y toma de decisiones inteligentes en las finanzas</p>
+	  
+<p>Nuestra misión se basa en los siguientes principios fundamentales:</p>
+
+<p>Excelencia en el servicio: Nos esforzamos por brindar un servicio excepcional a nuestros clientes, superando sus expectativas en cada interacción. Nos comprometemos a escuchar atentamente, comprender sus necesidades y proporcionar soluciones eficientes y efectivas.</p>
+
+<p> Innovación financiera: Abrazamos la innovación y la tecnología para ofrecer soluciones financieras avanzadas y actualizadas. Buscamos constantemente nuevas formas de mejorar y optimizar nuestros productos y servicios, manteniéndonos a la vanguardia de las tendencias y prácticas financieras.</p>
+
+<p>Impacto positivo en la comunidad: Creemos en el poder de las finanzas para generar un impacto positivo en la comunidad. Nos comprometemos a apoyar iniciativas y proyectos sociales que promuevan el bienestar financiero, la inclusión y la igualdad de oportunidades </p>
+
+      <br>
+	  <h2>VISON:</h2>
+      
+	  <h4><b>Construyendo puentes entre la contabilidad y la tecnología</b></h4>
+      
+	  <p>Nos visualizamos como un referente en el sector financiero, siendo reconocidos por nuestra integridad, transparencia y compromiso con la excelencia en el servicio al cliente. Nuestro objetivo es ayudar a las personas a alcanzar la estabilidad financiera, ofreciendo productos y servicios personalizados que se adapten a sus necesidades y metas</p>
+	  
+	  <p>A través de nuestra experiencia y conocimiento profundo del mercado, buscamos brindar orientación financiera confiable y estratégica para ayudar a nuestros clientes a tomar decisiones informadas y alcanzar sus objetivos financieros a corto y largo plazo.</p>
+	  
+    </div>
+    <div class="col-sm-4">
+      
+    </div>
+  </div>
+</div>
+
+
+  
+</div>
+
+<!-- Image of location/map -->
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>
